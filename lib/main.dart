@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:moovbe/views/splash_screen.dart';
+import 'package:moovbe/views/Bus%20Detail/bus_detail_screen.dart';
+import 'package:moovbe/views/Bus%20Detail/bus_list_home_screen.dart';
+import 'package:moovbe/views/Login/login_screen.dart';
+import 'package:moovbe/views/Splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home:  BusDetailScreen(),
     );
   }
 }
