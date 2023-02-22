@@ -37,7 +37,7 @@ class SplashScreen extends StatelessWidget {
                   child: BottomButton(
                     backgroundColor: kWhiteColor,
                     textColor: kPinkColor,
-                    onpress: () {},
+                    onpress: () {}, buttonText: 'Get Started',
                   ),
                 ),
                 SizedBox(

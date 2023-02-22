@@ -118,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                             log('sucess');
                           }
                           log('not sucess');
-                        },
+                        }, buttonText: 'Login',
                       ),
                     ],
                   ),

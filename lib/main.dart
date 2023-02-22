@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moovbe/views/Bus%20Detail/bus_detail_screen.dart';
 import 'package:moovbe/views/Bus%20Detail/bus_list_home_screen.dart';
+import 'package:moovbe/views/Driver%20Management/add_driver.dart';
+import 'package:moovbe/views/Drivers%20List/drivers_list.dart';
 import 'package:moovbe/views/Login/login_screen.dart';
 import 'package:moovbe/views/Splash/splash_screen.dart';
 
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  BusDetailScreen(),
+      home:  AddDriver(),
     );
   }
 }

@@ -67,7 +67,7 @@ class BusListHomeScreen extends StatelessWidget {
                 child: Text(
                   '21 Buses Found',
                   style: TextStyle(
-                    color: kListTileTextColor,
+                    color: kLightBlackColor,
                     fontSize: 18,
                   ),
                 ),

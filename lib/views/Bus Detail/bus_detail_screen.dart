@@ -18,14 +18,32 @@ class BusDetailScreen extends StatelessWidget {
           automaticallyImplyLeading: false,
           centerTitle: true,
           backgroundColor: kAppBarBlackColor,
-          title: Column(
-            children: [
-              Image.asset(
-                'assets/images/logo_spash.png',
-                width: 0.4 * screenWidth,
-              ),
-            ],
+          title: const Text(
+            'KSRTC Swift Scania P-series',
+            style: TextStyle(
+              color: kWhiteColor,
+              fontSize: 17,
+            ),
           ),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: kWhiteColor,
+              size: 25,
+            ),
+          ),
+
+          // Column(
+          //   children: [
+          //     Image.asset(
+          //       'assets/images/logo_spash.png',
+          //       width: 0.4 * screenWidth,
+          //     ),
+          //   ],
+          // ),
         ),
       ),
       body: SingleChildScrollView(
@@ -100,13 +118,14 @@ class BusDetailScreen extends StatelessWidget {
                       ),
                     ),
 
-                    Expanded( 
+                    Expanded(
                       child: ListView.separated(
-                        itemBuilder: ((context, index) => const SeatEachEachRow()),
+                        itemBuilder: ((context, index) =>
+                            const SeatEachEachRow()),
                         separatorBuilder: ((context, index) => SizedBox(
                               height: 0.01 * screenHeight,
                             )),
-                        itemCount: 10,
+                        itemCount: 8,
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                       ),

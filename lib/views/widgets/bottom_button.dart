@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:moovbe/core/colors.dart';
 
 class BottomButton extends StatelessWidget {
-   BottomButton({super.key,required this.backgroundColor,required this.textColor,required this.onpress});
+   BottomButton({super.key,required this.backgroundColor,required this.textColor,required this.onpress,required this.buttonText});
 
   Color backgroundColor;
   Color textColor;
   VoidCallback onpress;
+  String buttonText;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class BottomButton extends StatelessWidget {
         ),
         child:  Center(
           child: Text(
-            'Get Started',
+           // 'Get Started'
+            buttonText,
             style: TextStyle(
               color: textColor,
               fontSize: 24,

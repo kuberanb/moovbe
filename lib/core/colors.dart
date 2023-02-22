@@ -13,3 +13,6 @@ const kLoginHintColor = Color.fromRGBO(112, 112, 112, 1);
 const kListTileTextColor = Color.fromRGBO(71, 71, 71, 1);
 
 const kBlackColor = Colors.black;
+
+const kLightBlackColor = Color.fromRGBO(107, 107, 107, 1);
+

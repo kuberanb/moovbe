@@ -3,23 +3,26 @@ import 'package:moovbe/core/colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
-      {super.key, required this.hintText, required this.validatorFunction,required this.controller,this.obscureText = false});
+      {super.key,
+      required this.hintText,
+      required this.validatorFunction,
+      required this.controller,
+      this.obscureText = false});
 
   String hintText;
   String? Function(String?) validatorFunction;
   TextEditingController controller;
   bool obscureText;
 
-
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return TextFormField(
-      
-      obscureText: obscureText,
+        textAlign: TextAlign.center,
+        obscureText: obscureText,
         controller: controller,
-        style: const TextStyle(color: kBlackColor), 
+        style: const TextStyle(color: kBlackColor),
         decoration: InputDecoration(
           errorStyle: const TextStyle(
             color: kPinkColor,
@@ -38,7 +41,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10), 
+            borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(
               color: kLightGreyColor,
               width: 2.0,
