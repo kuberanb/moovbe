@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moovbe/core/colors.dart';
+import 'package:moovbe/views/Login/login_screen.dart';
 import 'package:moovbe/views/widgets/bottom_button.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -37,7 +38,14 @@ class SplashScreen extends StatelessWidget {
                   child: BottomButton(
                     backgroundColor: kWhiteColor,
                     textColor: kPinkColor,
-                    onpress: () {}, buttonText: 'Get Started',
+                    onpress: () {
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(
+                            builder: ((context) => LoginScreen()),
+                          ),
+                          (route) => false);
+                    },
+                    buttonText: 'Get Started',
                   ),
                 ),
                 SizedBox(

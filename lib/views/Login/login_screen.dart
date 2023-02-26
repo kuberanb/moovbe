@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:moovbe/core/colors.dart';
+import 'package:moovbe/provider/auth_provider.dart';
 import 'package:moovbe/views/widgets/bottom_button.dart';
 import 'package:moovbe/views/widgets/custom_text_form_field.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -16,6 +18,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
+    final authProvider = context.read<AuthProvider>();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -115,10 +118,26 @@ class LoginScreen extends StatelessWidget {
                         textColor: kWhiteColor,
                         onpress: () {
                           if (formKey.currentState!.validate()) {
-                            log('sucess');
+                            log('validation sucess');
+
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: ((context) => const Center(
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      color: kPinkColor,
+                                    ),
+                                  )),
+                            );
+
+                            authProvider.userLogin(userNameController.text,
+                                passwordController.text, context);
+
+                            Navigator.of(context).pop();
                           }
-                          log('not sucess');
-                        }, buttonText: 'Login',
+                        },
+                        buttonText: 'Login',
                       ),
                     ],
                   ),
